@@ -62,7 +62,11 @@ $settings['stopforumspam_block_on_error'] = "0";
 $settings['boardclosed'] = "0";
 $settings['boardclosed_reason'] = "These forums are currently closed for maintenance. Please check back later.";
 $settings['bbname'] = "Forums";
-$settings['bburl'] = "http://ui.mk/mybb";
+if($_SERVER['SERVER_NAME'] == "localhost"){
+    $settings['bburl'] = "http://localhost/mybb";
+} else {
+    $settings['bburl'] = "http://ui.mk/mybb";
+}
 $settings['canviewownwarning'] = "1";
 $settings['captchaimage'] = "1";
 $settings['stopforumspam_check_emails'] = "1";
