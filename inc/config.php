@@ -8,12 +8,21 @@
  */
 
 $config['database']['type'] = 'mysqli';
-$config['database']['database'] = 'mybb';
 $config['database']['table_prefix'] = 'mybb_';
 
 $config['database']['hostname'] = 'localhost';
-$config['database']['username'] = 'root';
-$config['database']['password'] = 'toor';
+
+
+
+if($_SERVER['SERVER_NAME'] == "localhost"){
+    $config['database']['database'] = 'mybb';
+    $config['database']['username'] = 'root';
+    $config['database']['password'] = 'toor';
+} else {
+    $config['database']['database'] = 'ui4';
+    $config['database']['username'] = 'ui';
+    $config['database']['password'] = 'ui.mk';
+}
 
 /**
  * Admin CP directory
